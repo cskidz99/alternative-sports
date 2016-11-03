@@ -3,7 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>ALTERNATIVE SPORTS</title>
+
+    <!-- Basic stylesheets -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
+    <!-- PhotoSwipe stylesheets -->
     <link rel="stylesheet" href="/photoswipe-dist/photoswipe.css">
 
     <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
@@ -16,6 +21,21 @@
   </head>
   <body>
 
+    <div ng-controller="demoCtrl as vm">
+      <h1> {{ vm.title }} </h1>
+
+      <!-- <button ng-click="vm.showGallery()"> Show Gallery (external btn) </button> -->
+
+      <ul class="slide-list">
+        <li ng-repeat="s in vm.slides track by $index" ng-click="vm.showGallery($index)">
+          <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
+        </li>
+      </ul>
+
+      <div ng-photoswipe slides="vm.slides" open="vm.open" slide-selector=".slide-list > li > img"
+        on-close="vm.closeGallery()" options="vm.opts"></div>
+
+    </div>
 
 
     <!-- Angular -->
@@ -24,12 +44,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
     <!-- My custome script files -->
-    <script src='js/app.js'></script>
+    <script src='/js/app.js'></script>
 
     <!-- Photoswipe script files -->
     <!-- Core JS file -->
     <script src="/photoswipe-dist/photoswipe.min.js"></script>
     <!-- UI JS file -->
     <script src="/photoswipe-dist/photoswipe-ui-default.min.js"></script>
+    <!-- Photoswipe angular script -->
+    <script src="/js/angular-photoswipe.js"></script>
+    <!-- Photoswipe constructor -->
+    <!-- <script src="/js/photoswipe-constructor.js"></script> -->
   </body>
 </html>
