@@ -21,6 +21,19 @@
   </head>
   <body>
 
+    <header>
+        <nav>
+            <ul>
+                <!--Navigation section, this is where you will put your ui-sref's so you can naviagte to different views -->
+                <li><a ui-sref='packages'>Writings</a></li>
+                <li><a ui-sref='locations'>Photos</a></li>
+                <li><a ui-sref='home'><img src="./img/KFC-logo.svg" alt="Alternative Sports Logo"></a></li>
+                <li><a ui-sref="adventurers">Arts</a></li>
+                <li><a ui-sref="contact">Submit</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div ng-controller="demoCtrl as vm">
       <h1> {{ vm.title }} </h1>
 
