@@ -1,0 +1,15 @@
+<div ng-controller="galleryCtrl as vm">
+  <h1> {{ vm.title }} </h1>
+
+  <!-- <button ng-click="vm.showGallery()"> Show Gallery (external btn) </button> -->
+
+  <ul class="slide-list">
+    <li ng-repeat="s in vm.slides track by $index" ng-click="vm.showGallery($index)">
+      <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
+    </li>
+  </ul>
+
+  <div ng-photoswipe slides="vm.slides" open="vm.open" slide-selector=".slide-list > li > img"
+    on-close="vm.closeGallery()" options="vm.opts"></div>
+
+</div>

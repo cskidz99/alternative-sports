@@ -1,0 +1,22 @@
+body {
+  background-color: lightgrey;
+  /*background-image: url('/img/temp-bg.jpeg');
+  background: contain;*/
+}
+
+header {
+    padding: 15px;
+    margin-bottom: 60px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    text-transform: uppercase   ;
+    font-weight: 100;
+    color: black;
+}

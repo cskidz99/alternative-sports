@@ -1,64 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="altSprts">
   <head>
-    <meta charset="utf-8">
     <title>ALTERNATIVE SPORTS</title>
 
+    <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="DevMtn Travels app using ui-routes ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Basic stylesheets -->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/gallery.css">
+
     <!-- PhotoSwipe stylesheets -->
     <link rel="stylesheet" href="/photoswipe-dist/photoswipe.css">
-
     <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
      In the folder of skin CSS file there are also:
      - .png and .svg icons sprite,
      - preloader.gif (for browsers that do not support CSS animations) -->
      <link rel="stylesheet" href="/photoswipe-dist/default-skin/default-skin.css">
 
+     <!-- View Styles -->
+    <link rel="stylesheet" href="styles/view-style/writings.scss">
+    <link rel="stylesheet" href="styles/view-style/photos.scss">
+    <link rel="stylesheet" href="styles/view-style/home.scss">
+    <link rel="stylesheet" href="styles/view-style/arts.scss">
+    <link rel="stylesheet" href="styles/view-style/contact.scss">
 
   </head>
   <body>
-
+  <main>
     <header>
         <nav>
             <ul>
                 <!--Navigation section, this is where you will put your ui-sref's so you can naviagte to different views -->
-                <li><a ui-sref='packages'>Writings</a></li>
-                <li><a ui-sref='locations'>Photos</a></li>
-                <li><a ui-sref='home'><img src="./img/KFC-logo.svg" alt="Alternative Sports Logo"></a></li>
-                <li><a ui-sref="adventurers">Arts</a></li>
+                <li><a ui-sref='writings'>Writings</a></li>
+                <li><a ui-sref='photos'>Photos</a></li>
+                <li><a ui-sref='home'><img src="./img/KFC-logo.svg" width='75px' height='75px' alt="Alternative Sports Logo"></a></li>
+                <li><a ui-sref="arts">Arts</a></li>
                 <li><a ui-sref="contact">Submit</a></li>
             </ul>
         </nav>
     </header>
 
-    <div ng-controller="demoCtrl as vm">
-      <h1> {{ vm.title }} </h1>
-
-      <!-- <button ng-click="vm.showGallery()"> Show Gallery (external btn) </button> -->
-
-      <ul class="slide-list">
-        <li ng-repeat="s in vm.slides track by $index" ng-click="vm.showGallery($index)">
-          <img ng-src="{{ s.src }}" alt="slide number {{ $index }}" />
-        </li>
-      </ul>
-
-      <div ng-photoswipe slides="vm.slides" open="vm.open" slide-selector=".slide-list > li > img"
-        on-close="vm.closeGallery()" options="vm.opts"></div>
-
-    </div>
+    <ui-view></ui-view>
 
 
+  </main>
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <!-- Ui Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
-    <!-- My custome script files -->
-    <script src='/js/app.js'></script>
-
+  <script src='/js/app.js'></script>
     <!-- Photoswipe script files -->
     <!-- Core JS file -->
     <script src="/photoswipe-dist/photoswipe.min.js"></script>
@@ -68,5 +64,11 @@
     <script src="/js/angular-photoswipe.js"></script>
     <!-- Photoswipe constructor -->
     <!-- <script src="/js/photoswipe-constructor.js"></script> -->
+
+    <!-- My custom script files -->
+
+    <script src='/js/Ctrl/mainCtrl.js'></script>
+    <script src='/js/Ctrl/galleryCtrl.js'></script>
+
   </body>
 </html>

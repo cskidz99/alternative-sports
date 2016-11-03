@@ -1,0 +1,22 @@
+{
+  "name": "alternative-sports",
+  "version": "1.0.0",
+  "description": "Online version of proposed zine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cskidz99/alternative-sports.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cskidz99/alternative-sports/issues"
+  },
+  "homepage": "https://github.com/cskidz99/alternative-sports#readme",
+  "dependencies": {
+    "ng-photoswipe": "^0.2.0"
+  }
+}
