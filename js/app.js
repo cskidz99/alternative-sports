@@ -7,7 +7,7 @@ angular
 function demoCtrlFn() {
   var vm = this;
 
-  vm.title = 'Test Gallery';
+  vm.title = 'Alternative Sports';
 
   vm.opts = {
     index: 0
