@@ -3,7 +3,7 @@ angular.module('altSprts').directive('animations',function(){
     restrict: 'EA',
     link: function(scope,elem,attr){
       $(window).on('scroll', function() {
-        winScroll = $(this).scrollTop();
+        let winScroll = $(this).scrollTop();
         console.log(winScroll);
 
         if (winScroll > 0 && winScroll < 105) {
