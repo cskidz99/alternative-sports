@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cskidz99/alternative-sports#readme",
   "dependencies": {
+    "angular-masonry": "^0.16.0",
     "ng-photoswipe": "^0.2.0"
   }
 }

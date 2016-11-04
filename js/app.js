@@ -1,4 +1,4 @@
-angular.module('altSprts', ['ui.router','ngPhotoswipe'])
+angular.module('altSprts', ['ui.router','wu.masonry'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('writings',{
@@ -9,7 +9,8 @@ angular.module('altSprts', ['ui.router','ngPhotoswipe'])
             .state('photos',{
                 url:'/photos',
                 // parent:'home',
-                templateUrl: "../views/photos.html"
+                templateUrl: "../views/photos.html",
+                controller: "photoCtrl"
             })
             .state('home',{
                 url:'/',

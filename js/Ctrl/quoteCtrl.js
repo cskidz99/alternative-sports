@@ -7,4 +7,5 @@ angular.module('altSprts').controller('quoteCtrl', function($scope, quoteService
 
   $scope.getQuotes();
 
+
 });

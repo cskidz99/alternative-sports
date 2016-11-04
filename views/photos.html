@@ -13,3 +13,9 @@
     on-close="vm.closeGallery()" options="vm.opts"></div>
 
 </div>
+
+<div masonry load-images="false">
+  <div class="masonry-brick" ng-repeat="brick in bricks">
+      <img ng-src="{{ brick.src }}" alt="A masonry brick" width='300px' height='300px'>
+  </div>
+</div>
