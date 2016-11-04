@@ -26,27 +26,18 @@
     <link rel="stylesheet" href="styles/view-style/writings.scss">
     <link rel="stylesheet" href="styles/view-style/photos.scss">
     <link rel="stylesheet" href="styles/view-style/home.scss">
-    <link rel="stylesheet" href="styles/view-style/arts.scss">
+    <link rel="stylesheet" href="styles/view-style/events.scss">
     <link rel="stylesheet" href="styles/view-style/contact.scss">
 
   </head>
   <body>
   <main>
-    <header>
-        <nav>
-            <ul>
-                <!--Navigation section, this is where you will put your ui-sref's so you can naviagte to different views -->
-                <li><a ui-sref='writings'>Writings</a></li>
-                <li><a ui-sref='photos'>Photos</a></li>
-                <li><a ui-sref='home'><img src="./img/KFC-logo.svg" width='75px' height='75px' alt="Alternative Sports Logo"></a></li>
-                <li><a ui-sref="arts">Arts</a></li>
-                <li><a ui-sref="contact">Submit</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <mag-header></mag-header>
 
     <ui-view></ui-view>
 
+    <mag-footer></mag-footer>
 
   </main>
     <!-- Angular -->
@@ -54,7 +45,6 @@
     <!-- Ui Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
-  <script src='/js/app.js'></script>
     <!-- Photoswipe script files -->
     <!-- Core JS file -->
     <script src="/photoswipe-dist/photoswipe.min.js"></script>
@@ -66,9 +56,14 @@
     <!-- <script src="/js/photoswipe-constructor.js"></script> -->
 
     <!-- My custom script files -->
-
+    <script src='/js/app.js'></script>
     <script src='/js/Ctrl/mainCtrl.js'></script>
     <script src='/js/Ctrl/galleryCtrl.js'></script>
+    <script src='/js/Ctrl/quoteCtrl.js'></script>
+    <script src='/js/services/quoteService.js'></script>
+    <script src='/js/directives/magHeaderDirective.js'></script>
+    <script src='/js/directives/magFooterDirective.js'></script>
+
 
   </body>
 </html>

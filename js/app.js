@@ -13,12 +13,13 @@ angular.module('altSprts', ['ui.router','ngPhotoswipe'])
             })
             .state('home',{
                 url:'/',
-                templateUrl: "../views/home.html"
+                templateUrl: "../views/home.html",
+                controller: "quoteCtrl"
             })
-            .state('arts',{
-                url:'/arts',
+            .state('events',{
+                url:'/events',
                 // parent:'home',
-                templateUrl: "../views/arts.html"
+                templateUrl: "../views/events.html"
             })
             .state('contact',{
                 url:'/contact',
@@ -29,4 +30,6 @@ angular.module('altSprts', ['ui.router','ngPhotoswipe'])
 
         $urlRouterProvider
             .otherwise('/');
+
+
     });
