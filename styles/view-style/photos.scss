@@ -1,8 +1,13 @@
-
 .gallery{
-  display: flex;
+  padding-top: 90px;
   text-align: center;
-  background-color: blue;
+  h1 {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  p {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+  }
 }
 
 .masonry-brick {

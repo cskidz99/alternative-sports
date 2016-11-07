@@ -1,21 +1,84 @@
+
+
 body {
     background-color: lightgrey;
     /*background-image: url('/img/temp-bg.jpeg');
   background: contain;*/
     header {
         padding: 15px;
-        margin-bottom: 60px;
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(42,42,42,1);
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        z-index: 999;
+        width: 100vw;
+
+
+
 
         nav ul {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 18px;
-            text-transform: uppercase;
-            font-weight: 100;
-            color: black;
+
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 18px;
+          text-transform: uppercase;
+          // font-weight: 100;
+          color: rgb(83,25,136);
+
+          li {
+            font-family: 'Josefin Sans', sans-serif;
+
+            a {
+              text-decoration: none;
+            }
+
+            .logo {
+              font-family: 'Montserrat Alternates', sans-serif;
+              font-size: 50px;
+            }
+          }
         }
+    }
+
+    section {
+      // display: flex;
+      // margin-top: 50px;
+    }
+
+    footer {
+      padding: 15px;
+      background-color: rgba(42,42,42,1);
+      box-shadow: -5px -5px 5px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      left:0px;
+      bottom:0px;
+      z-index: 999;
+      width: 100vw;
+
+
+      nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 50;
+        color: rgb(83,25,136);
+
+
+        li {
+          font-family: 'Josefin Sans', sans-serif;
+          // padding-left: 200px;
+          // padding-right: 200px;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+            font-kerning: 5%;
+          }
+        }
+      }
     }
 }
