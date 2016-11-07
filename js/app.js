@@ -3,12 +3,11 @@ angular.module('altSprts', ['ui.router','wu.masonry'])
         $stateProvider
             .state('writings',{
                 url:'/writings',
-                // parent:'home',
-                templateUrl: "../views/writings.html"
+                templateUrl: "../views/writings.html",
+                controller: "writingCtrl"
             })
             .state('photos',{
                 url:'/photos',
-                // parent:'home',
                 templateUrl: "../views/photos.html",
                 controller: "photoCtrl"
             })
@@ -19,18 +18,14 @@ angular.module('altSprts', ['ui.router','wu.masonry'])
             })
             .state('events',{
                 url:'/events',
-                // parent:'home',
                 templateUrl: "../views/events.html"
             })
             .state('contact',{
                 url:'/contact',
-                // parent:'home',
                 templateUrl: "../views/contact.html"
             })
 
-
         $urlRouterProvider
             .otherwise('/');
-
 
     });

@@ -3,11 +3,10 @@
 angular.module('altSprts', ['ui.router', 'wu.masonry']).config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state('writings', {
         url: '/writings',
-        // parent:'home',
-        templateUrl: "../views/writings.html"
+        templateUrl: "../views/writings.html",
+        controller: "writingCtrl"
     }).state('photos', {
         url: '/photos',
-        // parent:'home',
         templateUrl: "../views/photos.html",
         controller: "photoCtrl"
     }).state('home', {
@@ -16,11 +15,9 @@ angular.module('altSprts', ['ui.router', 'wu.masonry']).config(function ($stateP
         controller: "quoteCtrl"
     }).state('events', {
         url: '/events',
-        // parent:'home',
         templateUrl: "../views/events.html"
     }).state('contact', {
         url: '/contact',
-        // parent:'home',
         templateUrl: "../views/contact.html"
     });
 
@@ -78,13 +75,54 @@ angular.module('altSprts').controller('quoteCtrl', function ($scope, quoteServic
 });
 'use strict';
 
+angular.module('altSprts').controller('writingCtrl', function ($scope) {
+
+  $scope.writings = [{
+    author: 'John Doe',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  }, {
+    author: 'Jane Doe',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
+  }, {
+    author: 'Shakespeare',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
+  }, {
+    author: 'Walt Whitman',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
+  }, {
+    author: 'James Joyce',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
+  }, {
+    author: 'Some other person',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
+  }, {
+    author: 'More peeps',
+    w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
+  }];
+});
+'use strict';
+
+angular.module('altSprts').service('quoteService', function ($http, $q) {
+
+  this.getQuotes = function () {
+    return $http({
+      method: 'GET',
+      url: 'http://ron-swanson-quotes.herokuapp.com/v2/quotes'
+    }).then(function (response) {
+      return response.data;
+      // console.log(response.data);
+    });
+  };
+});
+'use strict';
+
 angular.module('altSprts').directive('animations', function () {
   return {
     restrict: 'EA',
     link: function link(scope, elem, attr) {
       $(window).on('scroll', function () {
         var winScroll = $(this).scrollTop();
-        console.log(winScroll);
+        // console.log(winScroll);
 
         if (winScroll > 0 && winScroll < 145) {
           $('.masonry-brick').css({
@@ -110,20 +148,6 @@ angular.module('altSprts').directive('magHeader', function () {
   return {
     restrict: 'E',
     templateUrl: '../../templates/magHeader.html'
-  };
-});
-'use strict';
-
-angular.module('altSprts').service('quoteService', function ($http, $q) {
-
-  this.getQuotes = function () {
-    return $http({
-      method: 'GET',
-      url: 'http://ron-swanson-quotes.herokuapp.com/v2/quotes'
-    }).then(function (response) {
-      return response.data;
-      // console.log(response.data);
-    });
   };
 });
 //# sourceMappingURL=bundle.js.map

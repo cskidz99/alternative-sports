@@ -2,8 +2,10 @@
 
 body {
     background-color: lightgrey;
-    /*background-image: url('/img/temp-bg.jpeg');
-  background: contain;*/
+    background-image: url('/img/paper-bg.jpeg');
+    background: contain;
+    background-attachment: fixed;
+    background-size: cover;
     header {
         padding: 15px;
         background-color: rgba(42,42,42,1);
@@ -29,13 +31,40 @@ body {
           li {
             font-family: 'Josefin Sans', sans-serif;
 
-            a {
-              text-decoration: none;
-            }
-
             .logo {
               font-family: 'Montserrat Alternates', sans-serif;
               font-size: 50px;
+            }
+
+            a {
+              position: relative;
+              text-decoration: none;
+              color: inherit;
+            }
+
+            a:hover {
+              color: inherit;
+            }
+
+            a:before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: teal;
+              visibility: hidden;
+              -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+              -webkit-transition: all 0.3s ease-in-out 0s;
+              transition: all 0.3s ease-in-out 0s;
+            }
+
+            a:hover:before {
+              visibility: visible;
+              -webkit-transform: scaleX(1);
+              transform: scaleX(1);
             }
           }
         }
@@ -74,10 +103,36 @@ body {
           // padding-right: 200px;
 
           a {
+            position: relative;
             text-decoration: none;
             color: inherit;
-            font-kerning: 5%;
           }
+
+          a:hover {
+            color: inherit;
+          }
+
+          a:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: teal;
+            visibility: hidden;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+          }
+
+          a:hover:before {
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+          }
+
         }
       }
     }

@@ -452,8 +452,10 @@ template {
 
 body {
   background-color: lightgrey;
-  /*background-image: url('/img/temp-bg.jpeg');
-  background: contain;*/ }
+  background-image: url("/img/paper-bg.jpeg");
+  background: contain;
+  background-attachment: fixed;
+  background-size: cover; }
   body header {
     padding: 15px;
     background-color: #2a2a2a;
@@ -471,11 +473,32 @@ body {
       color: #531988; }
       body header nav ul li {
         font-family: 'Josefin Sans', sans-serif; }
-        body header nav ul li a {
-          text-decoration: none; }
         body header nav ul li .logo {
           font-family: 'Montserrat Alternates', sans-serif;
           font-size: 50px; }
+        body header nav ul li a {
+          position: relative;
+          text-decoration: none;
+          color: inherit; }
+        body header nav ul li a:hover {
+          color: inherit; }
+        body header nav ul li a:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: teal;
+          visibility: hidden;
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s; }
+        body header nav ul li a:hover:before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1); }
   body footer {
     padding: 15px;
     background-color: #2a2a2a;
@@ -497,27 +520,93 @@ body {
       body footer nav ul li {
         font-family: 'Josefin Sans', sans-serif; }
         body footer nav ul li a {
+          position: relative;
           text-decoration: none;
-          color: inherit;
-          font-kerning: 5%; }
+          color: inherit; }
+        body footer nav ul li a:hover {
+          color: inherit; }
+        body footer nav ul li a:before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: teal;
+          visibility: hidden;
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s; }
+        body footer nav ul li a:hover:before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1); }
 
 .contact {
-  padding-top: 90px; }
+  padding-top: 90px;
+  text-align: center; }
+  .contact h1 {
+    font-family: 'Josefin Sans', sans-serif; }
+  .contact p {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  .contact button {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: white; }
+  .contact .name-box {
+    font-family: 'Rubik', sans-serif;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    text-align: left; }
+  .contact .work-box {
+    font-family: 'Rubik', sans-serif;
+    width: 60vw;
+    height: 40vh;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black; }
 
 .events {
-  padding-top: 90px; }
+  padding-top: 90px;
+  text-align: center; }
+  .events h1 {
+    font-family: 'Josefin Sans', sans-serif; }
+  .events p {
+    font-family: 'Rubik', sans-serif;
+    text-align: center; }
+  .events .event-card {
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    background-color: white;
+    margin-bottom: 5px;
+    margin-left: 20vw;
+    width: 60vw;
+    padding: 1em;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.6); }
+    .events .event-card .event-img {
+      margin-bottom: 1em;
+      width: 500px; }
 
 .home {
   padding-top: 90px; }
   .home p {
     color: lightgrey;
     font-family: 'Rubik', sans-serif;
-    font-size: 40px;
+    font-size: 5vh;
     text-align: center;
-    padding-top: 200px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 150px;
+    padding-top: 30vh;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-bottom: 25vh;
     background: radial-gradient(closest-side, rgba(0, 83, 80, 0.5), transparent); }
 
 .fullscreen-bg {
@@ -573,5 +662,19 @@ body {
   .writings p {
     font-family: 'Rubik', sans-serif;
     text-align: left; }
+  .writings .writing-card {
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    background-color: white;
+    margin-bottom: 5px;
+    margin-left: 20vw;
+    width: 60vw;
+    padding: 1em;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.6); }
+    .writings .writing-card .author {
+      margin-bottom: 1em; }
+  .writings .filter-boxes {
+    margin-bottom: 5px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

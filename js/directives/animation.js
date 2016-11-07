@@ -4,7 +4,7 @@ angular.module('altSprts').directive('animations',function(){
     link: function(scope,elem,attr){
       $(window).on('scroll', function() {
         let winScroll = $(this).scrollTop();
-        console.log(winScroll);
+        // console.log(winScroll);
 
         if (winScroll > 0 && winScroll < 145) {
         $('.masonry-brick').css({

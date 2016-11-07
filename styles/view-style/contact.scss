@@ -1,4 +1,40 @@
-.contact {
+.contact{
   padding-top: 90px;
+  text-align: center;
 
+  h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    // text-decoration: underline;
+  }
+  p {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  button {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    background-color: white;
+  }
+
+  .name-box {
+    font-family: 'Rubik', sans-serif;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    text-align: left;
+  }
+
+  .work-box {
+    font-family: 'Rubik', sans-serif;
+    width: 60vw;
+    height: 40vh;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+  }
 }
