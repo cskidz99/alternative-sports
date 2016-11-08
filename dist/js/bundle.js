@@ -26,42 +26,6 @@ angular.module('altSprts', ['ui.router', 'wu.masonry']).config(function ($stateP
 });
 'use strict';
 
-angular.module('altSprts').directive('animations', function () {
-  return {
-    restrict: 'EA',
-    link: function link(scope, elem, attr) {
-      $(window).on('scroll', function () {
-        var winScroll = $(this).scrollTop();
-        // console.log(winScroll);
-
-        if (winScroll > 0 && winScroll < 195) {
-          $('.masonry-brick').css({
-            'transform': 'matrix(' + winScroll / 200 + ', 0, 0, ' + winScroll / 200 + ', 0, 0)',
-            'opacity': winScroll / 100
-          });
-        }
-      });
-    }
-  };
-});
-'use strict';
-
-angular.module('altSprts').directive('magFooter', function () {
-  return {
-    restrict: 'E',
-    templateUrl: '../../templates/magFooter.html'
-  };
-});
-'use strict';
-
-angular.module('altSprts').directive('magHeader', function () {
-  return {
-    restrict: 'E',
-    templateUrl: '../../templates/magHeader.html'
-  };
-});
-'use strict';
-
 angular.module('altSprts').controller('mainCtrl', function () {});
 'use strict';
 
@@ -158,6 +122,42 @@ angular.module('altSprts').controller('writingCtrl', function ($scope) {
       return true;
     }
     return false;
+  };
+});
+'use strict';
+
+angular.module('altSprts').directive('animations', function () {
+  return {
+    restrict: 'EA',
+    link: function link(scope, elem, attr) {
+      $(window).on('scroll', function () {
+        var winScroll = $(this).scrollTop();
+        // console.log(winScroll);
+
+        if (winScroll > 0 && winScroll < 195) {
+          $('.masonry-brick').css({
+            'transform': 'matrix(' + winScroll / 200 + ', 0, 0, ' + winScroll / 200 + ', 0, 0)',
+            'opacity': winScroll / 100
+          });
+        }
+      });
+    }
+  };
+});
+'use strict';
+
+angular.module('altSprts').directive('magFooter', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '../../templates/magFooter.html'
+  };
+});
+'use strict';
+
+angular.module('altSprts').directive('magHeader', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '../../templates/magHeader.html'
   };
 });
 'use strict';
