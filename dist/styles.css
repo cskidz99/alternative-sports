@@ -576,7 +576,8 @@ body {
 
 .events {
   padding-top: 90px;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 50px; }
   .events h1 {
     font-family: 'Josefin Sans', sans-serif; }
   .events p {
@@ -594,7 +595,12 @@ body {
     box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.6); }
     .events .event-card .event-img {
       margin-bottom: 1em;
-      width: 500px; }
+      width: 100%; }
+    .events .event-card a {
+      color: black;
+      text-decoration: none; }
+    .events .event-card a:hover {
+      text-decoration: underline; }
 
 .home {
   padding-top: 90px; }
@@ -643,7 +649,9 @@ body {
 
 .gallery {
   padding-top: 90px;
-  text-align: center; }
+  text-align: center;
+  padding-left: 5vw;
+  padding-bottom: 50px; }
   .gallery h1 {
     font-family: 'Josefin Sans', sans-serif; }
   .gallery p {
@@ -652,11 +660,16 @@ body {
 
 .masonry-brick {
   transform: matrix(0, 0, 0, 0, 0, 0);
-  opacity: 0; }
+  opacity: 0;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  background-color: white; }
 
 .writings {
   padding-top: 90px;
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 50px; }
   .writings h1 {
     font-family: 'Josefin Sans', sans-serif; }
   .writings p {
@@ -676,5 +689,11 @@ body {
       margin-bottom: 1em; }
   .writings .filter-boxes {
     margin-bottom: 5px; }
+    .writings .filter-boxes input {
+      font-family: 'Rubik', sans-serif;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+      background-color: white; }
 
 /*# sourceMappingURL=maps/styles.css.map */

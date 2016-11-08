@@ -6,9 +6,9 @@ angular.module('altSprts').directive('animations',function(){
         let winScroll = $(this).scrollTop();
         // console.log(winScroll);
 
-        if (winScroll > 0 && winScroll < 145) {
+        if (winScroll > 0 && winScroll < 195) {
         $('.masonry-brick').css({
-          'transform': 'matrix(' + winScroll/150 + ', 0, 0, ' + winScroll/150 +', 0, 0)',
+          'transform': 'matrix(' + winScroll/200 + ', 0, 0, ' + winScroll/200 +', 0, 0)',
           'opacity': winScroll/100
         });
         }

@@ -22,7 +22,8 @@ angular.module('altSprts', ['ui.router','wu.masonry'])
             })
             .state('contact',{
                 url:'/contact',
-                templateUrl: "../views/contact.html"
+                templateUrl: "../views/contact.html",
+                controller: "submitCtrl"
             })
 
         $urlRouterProvider

@@ -18,10 +18,47 @@ angular.module('altSprts', ['ui.router', 'wu.masonry']).config(function ($stateP
         templateUrl: "../views/events.html"
     }).state('contact', {
         url: '/contact',
-        templateUrl: "../views/contact.html"
+        templateUrl: "../views/contact.html",
+        controller: "submitCtrl"
     });
 
     $urlRouterProvider.otherwise('/');
+});
+'use strict';
+
+angular.module('altSprts').directive('animations', function () {
+  return {
+    restrict: 'EA',
+    link: function link(scope, elem, attr) {
+      $(window).on('scroll', function () {
+        var winScroll = $(this).scrollTop();
+        // console.log(winScroll);
+
+        if (winScroll > 0 && winScroll < 195) {
+          $('.masonry-brick').css({
+            'transform': 'matrix(' + winScroll / 200 + ', 0, 0, ' + winScroll / 200 + ', 0, 0)',
+            'opacity': winScroll / 100
+          });
+        }
+      });
+    }
+  };
+});
+'use strict';
+
+angular.module('altSprts').directive('magFooter', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '../../templates/magFooter.html'
+  };
+});
+'use strict';
+
+angular.module('altSprts').directive('magHeader', function () {
+  return {
+    restrict: 'E',
+    templateUrl: '../../templates/magHeader.html'
+  };
 });
 'use strict';
 
@@ -75,6 +112,21 @@ angular.module('altSprts').controller('quoteCtrl', function ($scope, quoteServic
 });
 'use strict';
 
+angular.module('altSprts').controller('submitCtrl', function ($scope, writingCtrl) {
+
+  $scope.addWork = function () {
+    var newWriting = {
+      author: $scope.newAuthor,
+      w: $scope.newWork
+    };
+    if (writingCtrl.addData(newQuote)) {
+      $scope.newAuthor = '';
+      $scope.newWork = '';
+    }
+  };
+});
+'use strict';
+
 angular.module('altSprts').controller('writingCtrl', function ($scope) {
 
   $scope.writings = [{
@@ -99,6 +151,14 @@ angular.module('altSprts').controller('writingCtrl', function ($scope) {
     author: 'More peeps',
     w: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est labrum.'
   }];
+
+  this.addData = function (newWriting) {
+    if (newWriting.author && newWriting.w) {
+      writings.push(newWriting);
+      return true;
+    }
+    return false;
+  };
 });
 'use strict';
 
@@ -112,42 +172,6 @@ angular.module('altSprts').service('quoteService', function ($http, $q) {
       return response.data;
       // console.log(response.data);
     });
-  };
-});
-'use strict';
-
-angular.module('altSprts').directive('animations', function () {
-  return {
-    restrict: 'EA',
-    link: function link(scope, elem, attr) {
-      $(window).on('scroll', function () {
-        var winScroll = $(this).scrollTop();
-        // console.log(winScroll);
-
-        if (winScroll > 0 && winScroll < 145) {
-          $('.masonry-brick').css({
-            'transform': 'matrix(' + winScroll / 150 + ', 0, 0, ' + winScroll / 150 + ', 0, 0)',
-            'opacity': winScroll / 100
-          });
-        }
-      });
-    }
-  };
-});
-'use strict';
-
-angular.module('altSprts').directive('magFooter', function () {
-  return {
-    restrict: 'E',
-    templateUrl: '../../templates/magFooter.html'
-  };
-});
-'use strict';
-
-angular.module('altSprts').directive('magHeader', function () {
-  return {
-    restrict: 'E',
-    templateUrl: '../../templates/magHeader.html'
   };
 });
 //# sourceMappingURL=bundle.js.map

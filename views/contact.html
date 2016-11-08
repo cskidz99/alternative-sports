@@ -1,9 +1,9 @@
 <section class="contact">
   <h1>Got Something to Say?</h1>
   <p>Pseudonym</p>
-  <input type="text" class="name-box">
+  <input type="text" class="name-box" ng-model="newAuthor">
   <p>Work</p>
-  <input type="text" class="work-box">
+  <input type="text" class="work-box" ng-model="newWork">
   <p></p>
-  <button>Submit</button>
+  <button ng-click="addWork()">Submit</button>
 </section>

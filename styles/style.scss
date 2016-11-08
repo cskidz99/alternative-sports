@@ -6,6 +6,7 @@ body {
     background: contain;
     background-attachment: fixed;
     background-size: cover;
+
     header {
         padding: 15px;
         background-color: rgba(42,42,42,1);
@@ -14,9 +15,6 @@ body {
         position: fixed;
         z-index: 999;
         width: 100vw;
-
-
-
 
         nav ul {
 
@@ -70,11 +68,6 @@ body {
         }
     }
 
-    section {
-      // display: flex;
-      // margin-top: 50px;
-    }
-
     footer {
       padding: 15px;
       background-color: rgba(42,42,42,1);
@@ -85,7 +78,6 @@ body {
       z-index: 999;
       width: 100vw;
 
-
       nav ul {
         width: 100%;
         display: flex;
@@ -95,7 +87,6 @@ body {
         text-transform: uppercase;
         font-weight: 50;
         color: rgb(83,25,136);
-
 
         li {
           font-family: 'Josefin Sans', sans-serif;

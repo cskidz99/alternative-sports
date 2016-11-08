@@ -1,6 +1,9 @@
 .gallery{
   padding-top: 90px;
   text-align: center;
+  padding-left: 5vw;
+  padding-bottom: 50px;
+  
   h1 {
     font-family: 'Josefin Sans', sans-serif;
   }
@@ -13,4 +16,13 @@
 .masonry-brick {
   transform: matrix(0,0,0,0,0,0);
   opacity: 0;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  background-color: white;
+  // margin-bottom: 5px;
+  // margin-left: 20vw;
+  // width: 60vw;
+  // padding: 1em;
+  // box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.6);
 }
