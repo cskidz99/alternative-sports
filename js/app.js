@@ -3,26 +3,26 @@ angular.module('altSprts', ['ui.router','wu.masonry'])
         $stateProvider
             .state('writings',{
                 url:'/writings',
-                templateUrl: "../views/writings.html",
+                templateUrl: "./views/writings.html",
                 controller: "writingCtrl"
             })
             .state('photos',{
                 url:'/photos',
-                templateUrl: "../views/photos.html",
+                templateUrl: "./views/photos.html",
                 controller: "photoCtrl"
             })
             .state('home',{
                 url:'/',
-                templateUrl: "../views/home.html",
+                templateUrl: "./views/home.html",
                 controller: "quoteCtrl"
             })
             .state('events',{
                 url:'/events',
-                templateUrl: "../views/events.html"
+                templateUrl: "./views/events.html"
             })
             .state('contact',{
                 url:'/contact',
-                templateUrl: "../views/contact.html",
+                templateUrl: "./views/contact.html",
                 controller: "submitCtrl"
             })
 
