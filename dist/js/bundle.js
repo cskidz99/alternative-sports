@@ -128,7 +128,7 @@ angular.module('altSprts').directive('magFooter', function () {
 angular.module('altSprts').directive('magHeader', function () {
   return {
     restrict: 'E',
-    templateUrl: './templates/magHeader.html'
+    templateUrl: '.``/templates/magHeader.html'
   };
 });
 'use strict';
