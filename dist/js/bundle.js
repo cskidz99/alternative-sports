@@ -26,6 +26,77 @@ angular.module('altSprts', ['ui.router', 'wu.masonry']).config(function ($stateP
 });
 'use strict';
 
+angular.module('altSprts').controller('mainCtrl', function () {});
+'use strict';
+
+angular.module('altSprts').controller('photoCtrl', function ($scope) {
+
+  $scope.bricks = [{
+    src: 'http://lorempixel.com/500/500/business/1',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/2',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/3',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/4',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/5',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/6',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/7',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/8',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/9',
+    w: 300, h: 300
+  }, {
+    src: 'http://lorempixel.com/500/500/business/10',
+    w: 300, h: 300
+  }];
+});
+'use strict';
+
+angular.module('altSprts').controller('quoteCtrl', function ($scope, quoteService) {
+  $scope.getQuotes = function () {
+    quoteService.getQuotes().then(function (dataFromService) {
+      $scope.quote = dataFromService;
+    });
+  };
+
+  $scope.getQuotes();
+});
+'use strict';
+
+angular.module('altSprts').controller('submitCtrl', function ($scope, writingSrvc) {
+
+  $scope.addWork = function () {
+    var newWriting = {
+      author: $scope.newAuthor,
+      w: $scope.newWork
+    };
+    if (writingSrvc.addData(newWriting)) {
+      $scope.newAuthor = '';
+      $scope.newWork = '';
+    }
+  };
+});
+'use strict';
+
+angular.module('altSprts').controller('writingCtrl', function ($scope, writingSrvc) {
+
+  $scope.writings = writingSrvc.getData();
+});
+'use strict';
+
 angular.module('altSprts').directive('animations', function () {
   return {
     restrict: 'EA',
@@ -112,76 +183,5 @@ angular.module('altSprts').service('writingSrvc', function () {
   this.getData = function () {
     return writings;
   };
-});
-'use strict';
-
-angular.module('altSprts').controller('mainCtrl', function () {});
-'use strict';
-
-angular.module('altSprts').controller('photoCtrl', function ($scope) {
-
-  $scope.bricks = [{
-    src: 'http://lorempixel.com/500/500/business/1',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/2',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/3',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/4',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/5',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/6',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/7',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/8',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/9',
-    w: 300, h: 300
-  }, {
-    src: 'http://lorempixel.com/500/500/business/10',
-    w: 300, h: 300
-  }];
-});
-'use strict';
-
-angular.module('altSprts').controller('quoteCtrl', function ($scope, quoteService) {
-  $scope.getQuotes = function () {
-    quoteService.getQuotes().then(function (dataFromService) {
-      $scope.quote = dataFromService;
-    });
-  };
-
-  $scope.getQuotes();
-});
-'use strict';
-
-angular.module('altSprts').controller('submitCtrl', function ($scope, writingSrvc) {
-
-  $scope.addWork = function () {
-    var newWriting = {
-      author: $scope.newAuthor,
-      w: $scope.newWork
-    };
-    if (writingSrvc.addData(newWriting)) {
-      $scope.newAuthor = '';
-      $scope.newWork = '';
-    }
-  };
-});
-'use strict';
-
-angular.module('altSprts').controller('writingCtrl', function ($scope, writingSrvc) {
-
-  $scope.writings = writingSrvc.getData();
 });
 //# sourceMappingURL=bundle.js.map
